@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+:root {
+
+    /* light theme */
+    --main: hsl(0, 0%, 93%);
+    --accent: hsl(226, 57%, 30%);
+    --text: hsl(0, 0%, 13%);
+    --text-secondary: hsl(0, 0%, 33%);
+    --text-accent: var(--accent);
+    --text-on-accent: var(--dark-text);
+    
+    /* dark theme */
+    --dark-main: hsl(229, 41%, 10%);
+    --dark-accent: hsl(0, 50%, 50%);
+    --dark-text: hsl(0, 0%, 93%);
+    --dark-text-secondary: hsl(0, 0%, 67%);
+    --dark-text-accent: var(--dark-accent);
+    --dark-text-on-accent: var(--dark-text);
+
+    /* preserve light vars in dark theme */
+    --light-main: var(--main);
+    --light-text: var(--text);
+
+    /* other */
+    --section-max-width: 1250px;
+}
+
+.dark-mode {
+    --main: var(--dark-main);
+    --accent: var(--dark-accent);
+    --text: var(--dark-text);
+    --text-secondary: var(--dark-text-secondary);
+    --text-accent: var(--dark-text-accent);
+    --text-on-accent: var(--dark-text-on-accent);
+
+
+    /* --accent-secondary: var(--dark-accent-secondary); */
+    color: var(--text);
+}
+
+body {
+    background-color: var(--main);
+    color: var(--text);
+    font-family: 'Open Sans', sans-serif;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+    color: var(--text);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+section.normal-section {
+    width: clamp(0, 95vw, var(--section-max-width));
+}
+
+section.expanded-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    width: clamp(0px, 95vw, var(--section-max-width));
+    margin: 0 auto;
+}
+
+.text-accent {
+    color: var(--text-accent);
+}
+
+.material-icons {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
