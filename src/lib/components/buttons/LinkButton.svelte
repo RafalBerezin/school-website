@@ -6,10 +6,10 @@ Link stylized for a button
     ```tsx
         <LinkButton href={} ...> content </LinkButton>
     ```
+
 Props:
 - href
 - target
-
 -->
 
 <script>
@@ -34,6 +34,7 @@ Props:
         background: var(--accent);
         color: var(--text-on-accent);
         text-decoration: none;
+        font-weight: bold;
         
         border-radius: 5px;
         cursor: pointer;

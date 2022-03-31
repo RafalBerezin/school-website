@@ -1,12 +1,14 @@
 <script>
+    import { navigating } from '$app/stores';
     import { page } from '$app/stores';
-
-	import { scale, slide } from 'svelte/transition';
-	import { elasticOut } from 'svelte/easing';
+	import { slide } from 'svelte/transition';
 
     import { mobileWidthhTreshhold } from '$lib/stores/config';
     import LinkButton from '$lib/components/buttons/LinkButton.svelte';
+    import ThemeSwitch from "$lib/components/buttons/ThemeSwitch.svelte";
+    import SwitchingIcon from './SwitchingIcon.svelte';
 
+    $: if($navigating) isOpen = false;
     $: currentPath = $page.url.pathname;
     
     const navItems = [
@@ -37,7 +39,7 @@
     let isOpen = false;
     let screenWidth;
     $: isMobile = screenWidth <= mobileWidthhTreshhold;
-    
+
     const handleMobileIconClick = () => {isOpen = !isOpen}
 </script>
 
@@ -47,12 +49,11 @@
     {#if isMobile}
         <div class="mobile-bar" class:shadow={scrollY !== 0 || isOpen}>
             <a sveltekit:prefetch href="/"><img src="logo.svg" alt="logo"></a>
-            <div class="mobile-icon" on:click={handleMobileIconClick}>
-                {#if isOpen}
-                    <span class="material-icons" in:scale={{easing: elasticOut, duration: 1000}}>close</span>
-                {:else}
-                    <span class="material-icons" in:scale={{easing: elasticOut, duration: 1000}}>menu</span>
-                {/if}
+            <div class="mobile-buttons">
+                <ThemeSwitch />
+                <div class="mobile-icon" on:click={handleMobileIconClick}>
+                    <SwitchingIcon condition={isOpen} ifTrue="close" ifFalse="menu"/>
+                </div>
             </div>
         </div>
     {/if}
@@ -72,6 +73,9 @@
             {/each}
                 
             <li class="separate">
+                {#if !isMobile}
+                    <ThemeSwitch />
+                {/if}
                 <LinkButton href={"https://uonetplus.vulcan.net.pl/powiatlukowski/"} target={"_blank"}>
                     E-dziennik
                 </LinkButton>
@@ -96,16 +100,19 @@
         justify-content: space-between;
         align-items: center;
         padding: 1em;
-
         transition: box-shadow ease .25s;
     }
 
-    .mobile-icon{
-        padding: .5em;
+    .mobile-buttons {
+        display: flex;
+        gap: 1em;
     }
 
-    .mobile-icon span {
-        font-size: 2em;
+    .mobile-icon{
+        display: flex;
+        align-items: center;
+        padding: .25em;
+        --icon-size: 2em;
     }
 
     /* Navigation */
@@ -132,6 +139,8 @@
         position: relative;
         padding: 1em;
         text-transform: uppercase;
+        font-weight: bold;
+
     }
 
     li:not(.logo) a::after {
@@ -151,6 +160,7 @@
         transform: scaleX(0);
         transform-origin: center;
         transition: transform .15s ease-out;
+
     }
 
     li:not(.logo) a:hover::after {
@@ -167,6 +177,8 @@
 
     ul:not(.mobile) .separate {
         margin-left: auto;
+        display: flex;
+        gap: 1em;
     }
 
     ul.mobile {

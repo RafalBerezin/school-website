@@ -8,9 +8,9 @@
 }
 
 :root {
-
     /* light theme */
     --main: hsl(0, 0%, 93%);
+    --main-secondary: hsl(0, 0%, 88%);
     --accent: hsl(226, 57%, 30%);
     --text: hsl(0, 0%, 13%);
     --text-secondary: hsl(0, 0%, 33%);
@@ -19,6 +19,7 @@
     
     /* dark theme */
     --dark-main: hsl(229, 41%, 10%);
+    --dark-main-secondary: hsl(229, 41%, 15%);
     --dark-accent: hsl(0, 50%, 50%);
     --dark-text: hsl(0, 0%, 93%);
     --dark-text-secondary: hsl(0, 0%, 67%);
@@ -35,6 +36,7 @@
 
 .dark-mode {
     --main: var(--dark-main);
+    --main-secondary: var(--dark-main-secondary);
     --accent: var(--dark-accent);
     --text: var(--dark-text);
     --text-secondary: var(--dark-text-secondary);
@@ -50,6 +52,7 @@ body {
     background-color: var(--main);
     color: var(--text);
     font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
 }
 
 a,
@@ -57,11 +60,11 @@ a:visited {
     text-decoration: none;
     color: var(--text);
     cursor: pointer;
-    font-weight: bold;
 }
 
 
 section.normal-section {
+    padding: 2em 0;
     width: clamp(0, 95vw, var(--section-max-width));
 }
 
@@ -70,9 +73,22 @@ section.expanded-section {
     justify-content: center;
     align-items: center;
 
+    margin: 0 auto;
+    padding: 2em 0;
     min-height: 100vh;
     width: clamp(0px, 95vw, var(--section-max-width));
-    margin: 0 auto;
+}
+
+section.wide-section {
+    width: 100%;
+}
+
+main > div > section:first-of-type {
+    padding-top: 85px;
+}
+
+main > div > section:first-of-type > section.expanded-section {
+    min-height: calc(100vh - 85px);
 }
 
 .text-accent {
@@ -87,4 +103,10 @@ section.expanded-section {
           -ms-user-select: none; /* Internet Explorer/Edge */
               user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome, Edge, Opera and Firefox */
+}
+
+@media screen and (max-width: 300px) {
+    :root {
+        font-size: 10px;
+    }
 }

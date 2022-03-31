@@ -3,15 +3,17 @@
 
     import Navbar from "$lib/components/Navbar.svelte";
     import Footer from "$lib/components/Footer.svelte";
-    import ThemeSwitch from "$lib/components/buttons/ThemeSwitch.svelte";
 
     function changeTheme() {
         theme.update(value => value != 'dark' ? 'dark' : 'light')
     }
 </script>
+<svelte:head>
+    <title>Zespół Szkół Nr 1 w Łukowie</title>
+</svelte:head>
 <div class="container" class:dark-mode={$theme === 'dark'}>
     <Navbar />
-    <ThemeSwitch />
+    
 
     <main>
         <slot></slot>
