@@ -30,7 +30,11 @@ export async function get() {
             },
             {
                 $project: {
-                    "fields_of_study.group": 0
+                    _id: {
+                        $arrayElemAt: ["$_id", 0]
+                    },
+                    "fields_of_study.name": 1,
+                    "fields_of_study.img": 1,
                 }
             }
         ]).toArray();

@@ -3,21 +3,20 @@
     export function load({ error, status }) {
         return {
             props: {
-                title: `${status}: ${error.message}`
+                error: `${status}: ${error.message}`
             }
         };
     }
 </script>
-  
-<script>
-    export let title;
-</script>
 
+<script>
+    export let error;
+</script>
 
 <div class="error">
     <section class="expanded-section">
         <h2>
-            {title}
+            {error}
         </h2>
     </section>
 </div>

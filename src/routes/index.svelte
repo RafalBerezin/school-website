@@ -50,16 +50,12 @@
             </div>
         </section>
     </section>
+    <section class="expanded-section">
+
+    </section>
 </div>
 
 <style>
-    /* .banner {
-        position: relative;
-        background-image: url("/banner_lines.svg");
-        background-position: bottom right;
-        background-repeat: no-repeat;
-    } */
-
     .banner .flex {
         display: flex;
         width: 100%;

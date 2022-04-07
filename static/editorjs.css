@@ -1,0 +1,194 @@
+#editorjs {
+    background-color: var(--main-secondary);
+    color: var(--text);
+}
+
+.codex-editor{
+    z-index: 0;
+}
+/* block */
+.ce-block--selected .ce-block__content {
+    color: var(--text-on-accent);
+    background-color: var(--accent);
+}
+.cdx-block::selection,
+.ce-header::selection {
+    background-color: var(--accent);
+    color: var(--text-on-accent);
+}
+
+
+/* toolbar */
+.ce-toolbar__settings-btn,
+.ce-toolbar__plus {
+    color: var(--text);
+}
+.ce-toolbar__settings-btn--active,
+.ce-toolbar__settings-btn:hover,
+.ce-toolbar__plus--active,
+.ce-toolbar__plus:hover {
+    background-color: var(--accent);
+    color: var(--text-on-accent);
+}
+
+
+/* mobile toolbar */
+@media (max-width: 650px) {
+    .ce-toolbar {
+        background-color: var(--accent);
+        color: var(--text-on-accent);
+        border-color: var(--accent-secondary);
+    }
+    .ce-toolbar__settings-btn,
+    .ce-toolbar__plus {
+        color: var(--text);
+    }
+    .ce-toolbar__settings-btn--active,
+    .ce-toolbar__settings-btn:hover,
+    .ce-toolbar__plus--active,
+    .ce-toolbar__plus:hover {
+        background-color: var(--text-on-accent);
+        color: var(--accent);
+    }
+}
+
+
+/* inline toolbar */
+.ce-inline-toolbar {
+    background-color: var(--accent);
+    border-color: var(--accent-secondary);
+}
+.ce-inline-toolbar__dropdown {
+    border-color: var(--accent-secondary);
+    color: var(--text-on-accent);
+}
+.ce-conversion-toolbar__label {
+    color: var(--text-on-accent);
+    background-color: var(--accent);
+}
+.ce-inline-tool {
+    color: var(--text-on-accent);
+}
+.ce-inline-tool:hover,
+.ce-conversion-tool--focused {
+    background-color: var(--accent-secondary) !important;
+}
+.ce-inline-tool-input {
+    background-color: var(--accent);
+    border-color: var(--accent-secondary);
+    color: var(--text-on-accent);
+}
+.ce-inline-tool-input::placeholder {
+    color: var(--text-on-accent);
+}
+
+
+/* toolbox */
+.ce-toolbox__button {
+    color: var(--text);
+}
+.ce-toolbox__button--active,
+.ce-toolbox__button:hover {
+    background-color: var(--accent);
+    color: var(--text-on-accent);
+}
+
+
+/* settings */
+.ce-settings {
+    background-color: var(--accent);
+    border-color: var(--accent-secondary);
+}
+.ce-settings__button,
+.cdx-settings-button {
+    color: var(--text-on-accent);
+}
+.ce-settings__button:hover,
+.cdx-settings-button:hover {
+    background-color: var(--accent-secondary);
+}
+.ce-settings__button--focused {
+    background-color: var(--accent-secondary) !important;
+    color: var(--text-on-accent);
+}
+.cdx-settings-button--active {
+    background-color: var(--light-main) !important;
+    color: var(--accent);
+}
+.cdx-settings-button--active:hover {
+    background-color: var(--light-main);
+}
+.ce-settings__button--confirm {
+    background-color: var(--text) !important;
+    color: var(--accent);
+}
+.ce-settings__button--confirm:hover {
+    background-color: var(--text-on-accent) !important;
+}
+.ce-inline-toolbar__dropdown {
+    background-color: var(--accent);
+}
+.ce-inline-toolbar__dropdown:hover {
+    background-color: var(--accent-secondary);
+}
+.ce-conversion-toolbar--showed {
+    background-color: var(--accent);
+    border-color: var(--accent-secondary);
+}
+.ce-conversion-tool__icon{
+    background-color: var(--accent);
+    color: var(--text-on-accent);
+}
+.ce-conversion-tool{
+    color: var(--text-on-accent);
+}
+.ce-conversion-tool:hover {
+    background-color: var(--accent-secondary);
+    color: var(--text-on-accent);
+}
+
+
+/* table */
+.tc-wrap {
+    --color-border: var(--text) !important;
+}
+.tc-add-column,
+.tc-table:after {
+    border-right: 1px solid var(--color-border);
+}
+.tc-add-column:hover,
+.tc-add-row:hover,
+.tc-add-row:hover:before {
+    background-color: var(--accent) !important;
+    color: var(--text-on-accent);
+}
+.tc-add-row {
+    margin-top: 0 !important;
+}
+.tc-toolbox .tc-popover{
+    background-color: var(--accent);
+    border: var(--color-border);
+}
+.tc-popover__item:hover {
+    background-color: var(--accent-secondary) !important;
+}
+.tc-popover__item-label {
+    color: var(--text-on-accent);
+}
+.tc-popover__item-icon svg {
+    color: black;
+}
+.tc-cell--selected,
+.tc-row--selected {
+    background-color: var(--accent-secondary) !important;
+    color: var(--text-on-accent);
+}
+.tc-row--selected::after {
+    background-color: var(--accent-secondary) !important;   
+    height: calc(100% + 1px);
+    border-right: 1px solid var(--color-border);
+}
+.tc-popover__item--confirm .tc-popover__item-icon {
+    background-color: var(--text-on-accent) !important;
+    color: var(--accent) !important;
+} 

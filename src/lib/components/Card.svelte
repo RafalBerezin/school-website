@@ -63,14 +63,14 @@ Data should contain:
     }
 
     .card--image {
-        height: 66%;
+        width: 100%;
         display: flex;
         justify-content: center;
+        aspect-ratio: 1;
     }
 
     .card--image img {
         height: 100%;
-        /* aspect-ratio: 1; */
     }
 
     .card--title {
@@ -78,9 +78,10 @@ Data should contain:
         flex-direction: column;
         justify-content: center;
 
-        height: 33%;
+        width: 100%;
         text-align: center;
         text-transform: capitalize;
+        aspect-ratio: 2;
     }
 
     h2 {

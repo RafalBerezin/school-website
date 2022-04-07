@@ -21,10 +21,10 @@
     <section class="expanded-section">
         <div class="wrapper">
             {#each data as group}
-                <h2>{group._id[0].name}</h2>
+                <h2>{group._id.name}</h2>
                 <div class="tiles">
                     {#each group.fields_of_study as fos}
-                        <Card data={{title: group._id[0].title ?? group._id[0].name, ...fos}}/>
+                        <Card data={{title: group._id.title ?? group._id.name, ...fos}}/>
                     {/each}
                 </div>
             {/each}

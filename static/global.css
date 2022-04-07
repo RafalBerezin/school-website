@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('./editorjs.css');
+@import url('./scroll.css');
 
 *, *::after, *::before {
     margin: 0;
@@ -6,12 +8,16 @@
     box-sizing: border-box;
 
 }
-
+*::selection{
+    background-color: var(--accent-secondary);
+    color: var(--text-on-accent);
+}
 :root {
     /* light theme */
     --main: hsl(0, 0%, 93%);
     --main-secondary: hsl(0, 0%, 88%);
     --accent: hsl(226, 57%, 30%);
+    --accent-secondary: hsl(226, 57%, 35%);
     --text: hsl(0, 0%, 13%);
     --text-secondary: hsl(0, 0%, 33%);
     --text-accent: var(--accent);
@@ -21,6 +27,7 @@
     --dark-main: hsl(229, 41%, 10%);
     --dark-main-secondary: hsl(229, 41%, 15%);
     --dark-accent: hsl(0, 50%, 50%);
+    --dark-accent-secondary: hsl(0, 50%, 55%);
     --dark-text: hsl(0, 0%, 93%);
     --dark-text-secondary: hsl(0, 0%, 67%);
     --dark-text-accent: var(--dark-accent);
@@ -38,6 +45,7 @@
     --main: var(--dark-main);
     --main-secondary: var(--dark-main-secondary);
     --accent: var(--dark-accent);
+    --accent-secondary: var(--dark-accent-secondary);
     --text: var(--dark-text);
     --text-secondary: var(--dark-text-secondary);
     --text-accent: var(--dark-text-accent);
